@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { OauthCallbackComponent } from './auth/oauth-callback/oauth-callback.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { authGuard } from './auth/auth.guard';
+import { authGuard } from './auth/authService/auth.guard';
 
 export const routes: Routes = [
     { 

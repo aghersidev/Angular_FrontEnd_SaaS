@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../authService/auth.service';
 
 @Component({
   template: '<div class="callback-message">Processing session...</div>'
