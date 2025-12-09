@@ -13,8 +13,10 @@ import { AuthService } from '../auth/authService/auth.service';
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/dashboard">Dashboard</a></li>
         <li><a routerLink="/login">Login</a></li>
-        <li @if(authService.isLoggedIn())><a routerLink="/logout">Logout</a></li>
-      </ul>
+         @if(authService.isLoggedIn()) {
+          <li><a routerLink="/logout">Logout</a></li>
+         }
+        </ul>
     </nav>
   `,
   styleUrls: ['./navbar.component.css']
