@@ -14,7 +14,7 @@ import { AuthService } from '../auth/authService/auth.service';
         <li><a routerLink="/dashboard">Dashboard</a></li>
         <li><a routerLink="/login">Login</a></li>
          @if(authService.isLoggedIn()) {
-          <li><a routerLink="/logout">Logout</a></li>
+          <li><a href="#" (click)="logout()">Logout</a></li>
          }
         </ul>
     </nav>
@@ -23,4 +23,8 @@ import { AuthService } from '../auth/authService/auth.service';
 })
 export class NavbarComponent {
   constructor(public authService : AuthService) {
-} }
+} 
+  logout() {
+    this.authService.logout();
+  }
+}
