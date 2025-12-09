@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { AuthService } from '../auth/authService/auth.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink],
   template: `
     <nav class="navbar">
       <div class="logo">Inferia</div>
@@ -14,7 +13,7 @@ import { AuthService } from '../auth/authService/auth.service';
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/dashboard">Dashboard</a></li>
         <li><a routerLink="/login">Login</a></li>
-        <li *ngIf="authService.isLoggedIn()"><a routerLink="/logout">Logout</a></li>
+        <li @if(authService.isLoggedIn())><a routerLink="/logout">Logout</a></li>
       </ul>
     </nav>
   `,
