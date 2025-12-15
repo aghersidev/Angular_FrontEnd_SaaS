@@ -4,6 +4,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { OauthCallbackComponent } from './auth/oauth-callback/oauth-callback.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { authGuard } from './auth/authService/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
     { 
@@ -20,12 +21,11 @@ export const routes: Routes = [
         canActivate: [authGuard] 
     },
     { 
-        path: '', 
-        redirectTo: '/dashboard', 
-        pathMatch: 'full' 
+        path: 'home', 
+        component: HomeComponent,
     },
     { 
         path: '**', 
-        redirectTo: '/dashboard' 
+        redirectTo: '/home' 
     } 
 ];
